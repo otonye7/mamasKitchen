@@ -4,18 +4,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Shit now working</Text>
-      <StatusBar style="auto" />
+    <View>
+        <Text>CODE LIKE A FUCKING CHILD BRO!</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
