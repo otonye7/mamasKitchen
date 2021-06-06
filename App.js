@@ -1,15 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import ResturantScreen from './src/features/resturants/screens/resturants.screens';
 
 export default function App() {
   return (
-    <View>
-        <Text>CODE LIKE A FUCKING CHILD BRO!</Text>
-    </View>
+   <>
+    <ResturantScreen />
+    <ExpoStatusBar style="auto" />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
 
-});
