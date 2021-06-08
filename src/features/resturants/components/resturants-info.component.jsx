@@ -13,6 +13,7 @@ font-family: ${(props) => props.theme.fonts.heading};
 
 const ResturantCard = styled(Card) `
    background-color: ${(props) => props.theme.colors.bg.primary};
+   margin-top: ${(props) => props.theme.space[3]};
 `;
 
 const Address = styled.Text `
@@ -58,7 +59,7 @@ const ResturantInfo = ({resturant = {}}) => {
         photos = ['https://www.marinareservation.com/articles/wp-content/uploads/2016/07/C-COUTANCEAU-HD-2766.jpg'],
         address = 'Grieves food store',
         isOpenNow = true,
-        rating = 4,
+        rating = 5,
         isClosedTemporarily
     } = resturant
     
