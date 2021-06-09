@@ -12,7 +12,7 @@ export const resturantsRequest = (location = "37.7749295,-122.4194155") => {
 }
 
 resturantsRequest().then((result) => {
-        console.log(camelze(result))
+        console.log(camelize(result))
 }).catch((err) => {
     console.log(err)
 })
