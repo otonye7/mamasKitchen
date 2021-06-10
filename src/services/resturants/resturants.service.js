@@ -1,7 +1,7 @@
 import {mocks, mockImages} from './mock';
 import camelize from 'camelize';
 
-export const resturantsRequest = (location = "37.7749295,-122.4194155") => {
+export const resturantsRequest = (location) => {
     return new Promise((resolve, reject) => {
         const mock = mocks[location]
         if (!mock) {
@@ -18,6 +18,7 @@ export const resturantsTransform = ({ results = [] }) => {
         });
         return {
             ...resturant,
+            address: resturant.vicinity,
             isClosedTemporarily: resturant.business_status === "CLOSED_TEMPORARILY",
             isOpenNow: resturant.opening_hours && resturant.opening_hours.open_now
         }
