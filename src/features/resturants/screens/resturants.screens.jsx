@@ -20,10 +20,6 @@ const ResturantContainer = styled.View `
 const ResturantScreen = ({navigation}) => {
     const {isLoading, error, resturants} = useContext(ResturantsContext)
 
-    const handleClick = () => {
-      navigation.navigate("Resturants Details")
-    }
-
     return (
     <SafeArea >
         {
@@ -43,7 +39,10 @@ const ResturantScreen = ({navigation}) => {
           data={resturants}
           renderItem={({item}) => {
           return (
-            <TouchableOpacity onPress={handleClick}>
+            <TouchableOpacity onPress={() =>   navigation.navigate("Resturants Details", {
+              resturant: item,
+            })
+          }>
               <ResturantInfo resturant={item}/>
             </TouchableOpacity>  
           )}
