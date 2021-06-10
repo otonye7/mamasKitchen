@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { StatusBar, SafeAreaView, FlatList, View} from 'react-native';
+import { StatusBar, SafeAreaView, FlatList, View, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 import ResturantInfo from '../components/resturants-info.component';
 import {ResturantsContext} from '../../../services/resturants/resturants.context';
@@ -17,8 +17,13 @@ const ResturantContainer = styled.View `
  padding: ${(props) => props.theme.space[3]};
 `;
 
-const ResturantScreen = () => {
+const ResturantScreen = ({navigation}) => {
     const {isLoading, error, resturants} = useContext(ResturantsContext)
+
+    const handleClick = () => {
+      navigation.navigate("Resturants Details")
+    }
+
     return (
     <SafeArea >
         {
@@ -38,7 +43,9 @@ const ResturantScreen = () => {
           data={resturants}
           renderItem={({item}) => {
           return (
-             <ResturantInfo resturant={item}/>
+            <TouchableOpacity onPress={handleClick}>
+              <ResturantInfo resturant={item}/>
+            </TouchableOpacity>  
           )}
           }
           keyExtractor={(item) => item.name}
