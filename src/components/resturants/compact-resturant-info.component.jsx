@@ -1,9 +1,16 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {Text} from 'react-native';
+import {Platform} from 'react-native';
 import WebView from 'react-native-webview';
 
 const CompactImage = styled.Image`
+  border-radius: 10px;
+  width: 120px;
+  height: 100px;
+`;
+
+const CompactWebView = styled(WebView)`
   border-radius: 10px;
   width: 120px;
   height: 100px;
@@ -15,11 +22,13 @@ const Item = styled.View`
   align-items: center;
 `;
 
+const isAndroid = Platform.OS === 'android';
+
 const CompactResturantInfo = ({resturant}) => {
-    console.log(resturant)
+    const Image = isAndroid ? CompactWebView : CompactImage;
     return (
         <Item>
-            <CompactImage source={{ uri: resturant.photos[0] }}/>
+            <Image source={{ uri: resturant.photos[0] }}/>
             <Text>
                 {resturant.name}
             </Text>
