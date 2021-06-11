@@ -1,0 +1,10 @@
+import React from 'react';
+import CompactResturantInfo from '../../../components/resturants/compact-resturant-info.component';
+
+const MapCallOut = ({resturant}) => {
+    return (
+        <CompactResturantInfo resturant={resturant} />
+    )
+}
+
+export default MapCallOut;
