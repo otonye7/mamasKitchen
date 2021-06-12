@@ -6,6 +6,7 @@ import {useFonts as useOswald, Oswald_400Regular} from '@expo-google-fonts/oswal
 import {useFonts as useLato, Lato_400Regular} from '@expo-google-fonts/lato';
 import {ResturantsContextProvider} from './src/services/resturants/resturants.context';
 import {LocationContextProvider} from './src/services/location/location.context';
+import {FavouritesContextProvider} from './src/services/favourites/favourites.context';
 import { Navigation } from "./src/infrastructure/navigation/index";
 
  
@@ -26,11 +27,13 @@ export default function App() {
   return (
    <>
    <ThemeProvider theme={theme}>
+     <FavouritesContextProvider>
      <LocationContextProvider>
      <ResturantsContextProvider>
            <Navigation />
       </ResturantsContextProvider>
       </LocationContextProvider>
+      </FavouritesContextProvider>
    </ThemeProvider>
    <ExpoStatusBar style="auto" />
     </>

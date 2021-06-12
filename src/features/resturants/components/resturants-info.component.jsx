@@ -4,6 +4,7 @@ import { Card } from 'react-native-paper';
 import {SvgXml} from 'react-native-svg';
 import star from '../../../../assets/star';
 import open from '../../../../assets/open';
+import Favourite from '../../../components/favourites/favourite.component';
 
 
 const Title = styled.Text `
@@ -68,6 +69,7 @@ const ResturantInfo = ({resturant = {}}) => {
 
     return (
         <ResturantCard elevation={5} >
+          <Favourite />
             <ResturantCardCover key={name} source={{uri: photos[0] }} />
             <Info>
                <Title>{name}</Title>

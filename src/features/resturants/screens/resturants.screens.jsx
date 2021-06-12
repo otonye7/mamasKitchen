@@ -3,6 +3,7 @@ import { StatusBar, SafeAreaView, FlatList, View, TouchableOpacity} from 'react-
 import styled from 'styled-components/native';
 import ResturantInfo from '../components/resturants-info.component';
 import {ResturantsContext} from '../../../services/resturants/resturants.context';
+import {FavouritesContext} from '../../../services/favourites/favourites.context';
 import {ActivityIndicator, Colors} from 'react-native-paper';
 import Search from '../components/search.component';
 
@@ -18,8 +19,9 @@ const ResturantContainer = styled.View `
 `;
 
 const ResturantScreen = ({navigation}) => {
-    const {isLoading, error, resturants} = useContext(ResturantsContext)
-
+    const {isLoading, error, resturants} = useContext(ResturantsContext);
+    const {favourites} = useContext(FavouritesContext)
+    console.log(favourites)
     return (
     <SafeArea >
         {
