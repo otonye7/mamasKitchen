@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import styled from 'styled-components/native';
 import CompactResturantInfo from '../resturants/compact-resturant-info.component';
 
