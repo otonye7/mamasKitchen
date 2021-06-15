@@ -47,7 +47,7 @@ const ResturantScreen = ({navigation}) => {
               resturant: item,
             })
           }>
-              <ResturantInfo resturant={item}/>
+              <ResturantInfo resturant={item} onnDetail={navigation.navigate}/>
             </TouchableOpacity>  
           )}
           }

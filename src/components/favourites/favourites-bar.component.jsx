@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, TouchableOpacity, Text} from 'react-native';
 import styled from 'styled-components/native';
 import CompactResturantInfo from '../resturants/compact-resturant-info.component';
 
@@ -7,16 +7,24 @@ const FavoriteWrapper = styled.View`
   padding: 10px;
 `;
 
-const FavouritesBar = ({favourites}) => {
+const FavouritesBar = ({favourites, onDetail}) => {
+    if(favourites.length === 0) {
+        return;
+    }
     return  (
         <FavoriteWrapper>
+            <Text>Favourites</Text>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 {
                     favourites.map((resturant) => {
                         const key = resturant.name;
                         return (
                             <View key={key} style={{marginRight: 10}}>
-                                <CompactResturantInfo resturant={resturant} />
+                                <TouchableOpacity onPress={() => onDetail("Resturant Details", {
+                                    resturant
+                                })}>
+                                     <CompactResturantInfo resturant={resturant} />
+                                </TouchableOpacity>
                             </View>
                         )
                     })
