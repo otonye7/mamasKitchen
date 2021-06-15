@@ -69,7 +69,7 @@ const ResturantInfo = ({resturant = {}}) => {
 
     return (
         <ResturantCard elevation={5} >
-          <Favourite />
+          <Favourite resturant={resturant}/>
             <ResturantCardCover key={name} source={{uri: photos[0] }} />
             <Info>
                <Title>{name}</Title>
