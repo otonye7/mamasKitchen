@@ -8,7 +8,20 @@ import {ResturantsContextProvider} from './src/services/resturants/resturants.co
 import {LocationContextProvider} from './src/services/location/location.context';
 import {FavouritesContextProvider} from './src/services/favourites/favourites.context';
 import { Navigation } from "./src/infrastructure/navigation/index";
+import firebase from 'firebase/app'
 
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBlIKL7w6ES2va0_2YEVot70Rywy-IOFhE",
+  authDomain: "mamakitchen-c5929.firebaseapp.com",
+  projectId: "mamakitchen-c5929",
+  storageBucket: "mamakitchen-c5929.appspot.com",
+  messagingSenderId: "844208627158",
+  appId: "1:844208627158:web:11e5226fbe0927faa6d877"
+};
+
+firebase.initializeApp(firebaseConfig);
  
 export default function App() {
 
